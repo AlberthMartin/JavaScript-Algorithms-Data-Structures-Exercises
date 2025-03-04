@@ -6,6 +6,7 @@ const addOrUpdateTaskBtn = document.getElementById("add-or-update-task-btn");
 const cancelBtn = document.getElementById("cancel-btn");
 const discardBtn = document.getElementById("discard-btn");
 const tasksContainer = document.getElementById("tasks-container");
+//input of the TODO info
 const titleInput = document.getElementById("title-input");
 const dateInput = document.getElementById("date-input");
 const descriptionInput = document.getElementById("description-input");
@@ -41,10 +42,11 @@ const addOrUpdateTask = () => {
   updateTaskContainer()
   reset()
 };
-
+//Update the task data
 const updateTaskContainer = () => {
+  //Clear the task container
   tasksContainer.innerHTML = "";
-
+  //Go through all task data and 
   taskData.forEach(
     ({ id, title, date, description }) => {
         (tasksContainer.innerHTML += `
