@@ -12,7 +12,7 @@ let isCheckpointCollisionDetectionActive = true;
 const proportionalSize = (size) => {
   return innerHeight < 500 ? Math.ceil((size / 500) * innerHeight) : size;
 }
-
+//Representing the player box moving on the screen
 class Player {
   constructor() {
     this.position = {
@@ -26,11 +26,12 @@ class Player {
     this.width = proportionalSize(40);
     this.height = proportionalSize(40);
   }
+  //Draws the cube
   draw() {
     ctx.fillStyle = "#99c9ff";
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
-  
+  //Updates the position of the cube
   update() {
     this.draw();
     this.position.x += this.velocity.x;
@@ -55,7 +56,7 @@ class Player {
     }
   }
 }
-
+//Draws the platforms on the map
 class Platform {
   constructor(x, y) {
     this.position = {
